@@ -3,13 +3,15 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :favorites
   has_many :comments
+  belongs_to_active_hash :team
+  belongs_to_active_hash :stadium
 
-  # バリデーション
   validates :team_id, presence: true
   validates :player, presence: true
   validates :day, presence: true
   validates :lyrics, presence: true
   validates :place_id, presence: true
   validates :text, presence: true
-  
+  validates :team_id, :stadium_id, numericality: { other_than: 1, message: "can't be blank" }
+
 end
