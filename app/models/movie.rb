@@ -3,6 +3,8 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :favorites
   has_many :comments
+  has_many :movie_tags
+  has_many :tags, through: :movie_tags
   belongs_to_active_hash :team
   belongs_to_active_hash :stadium
 
