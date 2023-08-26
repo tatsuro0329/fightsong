@@ -1,0 +1,173 @@
+/* 新規登録--------------------------------------------------------------------- */
+
+/* ベースカラーの定義 */
+:root {
+  --grey-color: #4a4a4a;
+  --light-grey-color: #a9a9a9;
+  --bg-grey-color: #f4f4f4;
+}
+
+/* ヘッダーのスタイル */
+h2 {
+  color: var(--grey-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* フォーム全体のスタイル */
+form {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: var(--bg-grey-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 各入力フィールドのスタイル */
+.new_field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ラベルのスタイル */
+.new_field label {
+  color: var(--grey-color);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.new_field em {
+  margin-left: 5px;
+  font-size: 14px;
+  color: var(--light-grey-color);
+}
+
+/* 入力フィールドのスタイル */
+.new_field input[type="text"], 
+.new_field input[type="email"], 
+.new_field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light-grey-color);
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.new_field input[type="text"]:focus, 
+.new_field input[type="email"]:focus, 
+.new_field input[type="password"]:focus {
+  border-color: var(--grey-color);
+}
+
+/* 登録ボタンのスタイル */
+.new_actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.new_actions input[type="submit"] {
+  background-color: var(--grey-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new_actions input[type="submit"]:hover {
+  background-color: var(--light-grey-color);
+}
+
+
+/* ログイン--------------------------------------------------------------------- */
+
+/* ベースカラーの定義 */
+:root {
+  --grey-color: #4a4a4a;
+  --light-grey-color: #a9a9a9;
+  --bg-grey-color: #f4f4f4;
+}
+
+/* ヘッダーのスタイル */
+h2 {
+  color: var(--grey-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* フォーム全体のスタイル */
+form {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: var(--bg-grey-color);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ログイン用の入力フィールドのスタイル */
+.login_field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ラベルのスタイル */
+.login_field label {
+  color: var(--grey-color);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* チェックボックスのスタイル調整 */
+.login_field input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* 入力フィールドのスタイル */
+.login_field input[type="email"], 
+.login_field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light-grey-color);
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.login_field input[type="email"]:focus, 
+.login_field input[type="password"]:focus {
+  border-color: var(--grey-color);
+}
+
+/* ログインボタンのスタイル */
+.login_actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login_actions input[type="submit"] {
+  background-color: var(--grey-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login_actions input[type="submit"]:hover {
+  background-color: var(--light-grey-color);
+}
