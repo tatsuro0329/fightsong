@@ -1,0 +1,76 @@
+/* ヘッダー全体のスタイル */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* 余白多め */
+  background-color: #f4f4f4; /* 落ち着いたグレー */
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* ソフトな影 */
+}
+
+/* ロゴ関連のスタイル */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none; 
+}
+.app-logo {
+  max-height: 120px;
+  margin-right: 60px; /* ロゴとテキストの間の余白 */
+  border-radius: 15px;
+}
+
+/* ユーザー情報関連のスタイル */
+.user-info {
+  display: flex;
+}
+.upload-btn {
+  padding: 10px 20px;
+  background-color: #1a3861; /* 深い青 */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #173151; /* より濃い青 */
+  transform: scale(1.05);
+}
+
+.upload-btn:active {
+  background-color: #132b48; /* より濃い青 */
+  transform: scale(0.95);
+}
+
+
+.user-info ul {
+  display: flex;
+  list-style: none; /* リストマーカーを非表示 */
+  margin: 0; /* マージンのリセット */
+  padding: 0; /* パディングのリセット */
+}
+.user-info li {
+  margin: 0 10px; /* 各アイテムの間の余白 */
+}
+.user-name, .login-btn, .logout-btn, .signup-btn {
+  text-decoration: none; 
+  padding: 5px 10px;
+  border-radius: 5px; /* 角を少し丸める */
+  transition: background-color 0.3s; /* ホバーアクションのためのアニメーション */
+}
+.login-btn, .signup-btn {
+  background-color: #a8a8a8; /* グレー */
+  color: white;
+}
+.login-btn:hover, .signup-btn:hover {
+  background-color: #8c8c8c; /* グレーを少し濃く */
+}
+.logout-btn {
+  color: #7d7d7d; /* 落ち着いたグレーカラー */
+}
+.logout-btn:hover {
+  color: #5a5a5a; /* ホバー時は少し濃い色 */
+}

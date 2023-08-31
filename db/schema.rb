@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_26_094431) do
   create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.text "text", null: false
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
@@ -39,12 +40,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_26_094431) do
   end
 
   create_table "movies", charset: "utf8", force: :cascade do |t|
+    t.string "movie_url", null: false
     t.integer "team_id", null: false
     t.string "player", null: false
     t.date "day", null: false
     t.string "lyrics", null: false
-    t.integer "place_id", null: false
-    t.text "text", null: false
+    t.integer "stadium_id", null: false
+    t.text "text"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -41,14 +41,14 @@ Things you may want to cover:
 
 ## movies テーブル
 
-| Column   | Type    | Options     |
-| -------- | ------- | ----------- |
-| team_id  | integer | null: false |
-| player   | string  | null: false |
-| day      | date    | null: false |
-| lyrics   | string  | null: false |
-| place_id | integer | null: false |
-| text     | text    | null: false |
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| team_id    | integer | null: false |
+| player     | string  | null: false |
+| day        | date    | null: false |
+| lyrics     | string  | null: false |
+| stadium_id | integer | null: false |
+| text       | text    | null: false |
 
 ### Association
 

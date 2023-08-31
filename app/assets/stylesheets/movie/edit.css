@@ -1,0 +1,106 @@
+/* Add any necessary reset or global styles here */
+
+.container_edit {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.content-wrapper_edit {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Take full available width */
+  max-width: 600px; /* Limit width for better readability */
+}
+
+.first-element_edit,
+.second-element_edit {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  gap: 20px;
+  width: 100%; /* Take full available width */
+}
+
+.movie-video_edit {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.movie-info_edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 455px;
+}
+
+.info-section_edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-label_edit {
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.form-control_edit {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.text_area_edit {
+  height: 150px;
+  resize: vertical;
+}
+
+.movie-video_edit {
+  flex: 1;
+}
+
+.second-element_edit {
+  margin-bottom: 20px;
+}
+
+.text-section_edit {
+  margin-bottom: 10px;
+}
+
+.form-group_edit.action-buttons_edit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-primary_edit {
+  background-color: #1a3861;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary_edit:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container_edit {
+    padding: 10px;
+  }
+}

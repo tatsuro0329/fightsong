@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+<pre><%= @movies.inspect %></pre>
+
+<div class="contents row_search">
+  <% @movies.each do |movie| %>
+    <div class="movie-wrapper_search">
+      <%= link_to movie_path(movie) do %>
+        <div class="post-container_search">
+          <!-- 左側：動画情報 & 歌詞 -->
+          <div class="post-left_search">
+            <%= video_tag movie.movie_url, controls: true, class: 'video-thumbnail_search' %>
+            <p class="lyrics_search"><%= movie.lyrics %></p>
+          </div>
+          
+          <!-- 右側：情報表示部分 -->
+          <div class="post-right_search">
+            <p class="team_search"><%= movie.team.name %></p>
+            <p class="player_search"><%= movie.player %></p>
+            <p class="stadium_search"><%= movie.stadium.name %></p>
+            <p class="day_search"><%= movie.day %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>

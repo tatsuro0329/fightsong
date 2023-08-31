@@ -1,0 +1,63 @@
+<%= render "shared/header" %>
+
+<div class="container_edit">
+  <div class="content-wrapper_edit">
+
+    <!-- フォーム開始 -->
+    <%= form_for @movie, url: movie_path(@movie), method: :patch, html: { class: "movie-form_edit", multipart: true } do |f| %>
+
+      <!-- ★1つ目の要素★ -->
+      <div class="first-element_edit">
+        <!-- 動画表示部分 -->
+        <div class="movie-video_edit">
+          <%= video_tag @movie.movie_url, controls: true, class: 'video-thumbnail_edit' %>
+        </div>
+      </div>
+
+      <!-- ★2つ目の要素★ -->
+      <div class="second-element_edit movie-text_edit">
+        <!-- 動画情報表示部分 -->
+        <div class="movie-info_edit">
+          <div class="info-section_edit">
+            <p class="info-label_edit">チーム:</p>
+            <%= f.collection_select :team_id, Team.all, :id, :name, class: "form-control_edit" %>
+          </div>
+          <div class="info-section_edit">
+            <p class="info-label_edit">選手:</p>
+            <%= f.text_field :player, class: "form-control_edit" %>
+          </div>
+          <div class="info-section_edit">
+            <p class="info-label_edit">球場:</p>
+            <%= f.collection_select :stadium_id, Stadium.all, :id, :name, class: "form-control_edit" %>
+          </div>
+          <div class="info-section_edit">
+            <p class="info-label_edit">投稿日:</p>
+            <%= f.date_select :day, { order: [:year, :month, :day], use_month_names: %w(1 2 3 4 5 6 7 8 9 10 11 12) }, class: "form-control_edit" %>
+          </div>
+          <div class="info-section_edit">
+            <p class="info-label_edit">動画URL:</p>
+            <%= f.text_field :movie_url, class: "form-control_edit" %>
+          </div>
+          <div class="text-section_edit">
+            <p class="text-label_edit">歌詞:</p>
+            <%= f.text_area :lyrics, class: "form-control_edit" %>
+          </div>
+          <div class="text-section_edit">
+            <p class="text-label_edit">その他:</p>
+            <%= f.text_field :text, class: "form-control_edit" %>
+          </div>
+        </div>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="form-group_edit action-buttons_edit">
+        <%= f.submit "更新", class: "btn btn-primary_edit" %>
+      </div>
+
+    <% end %>
+    <!-- フォーム終了 -->
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>

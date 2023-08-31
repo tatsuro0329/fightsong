@@ -1,4 +1,4 @@
-lass Team < ActiveHash::Base
+class Team < ActiveHash::Base
  self.data = [
    { id: 1, name: '---' },
    { id: 2, name: '北海道日本ハムファイターズ' },
@@ -9,9 +9,9 @@ lass Team < ActiveHash::Base
    { id: 7, name: '読売ジャイアンツ' },
    { id: 8, name: '横浜DeNAベイスターズ' },
    { id: 9, name: '中日ドラゴンズ' },
-   { id: 10, name: 'オリックスバファローズ' }
-   { id: 11, name: '阪神タイガース' }
-   { id: 12, name: '広島東洋カープ' }
+   { id: 10, name: 'オリックスバファローズ' },
+   { id: 11, name: '阪神タイガース' },
+   { id: 12, name: '広島東洋カープ' },
    { id: 13, name: '福岡ソフトバンクホークス' }
    ]
  end

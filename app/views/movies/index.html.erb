@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<div class="container_index">
+<!-- 左側：検索機能 -->
+<div class="grid-1">
+  <%= search_form_for @q, url: search_movies_path, method: :get, local: true do |f| %>
+    <div class="search-group">
+      <%= f.label :team_id_eq, "チーム" %>
+      <%= f.collection_select :team_id_eq, Team.all, :id, :name %>
+    </div>
+    <div class="search-group">
+      <%= f.label :player_cont, "選手" %>
+      <%= f.search_field :player_cont %>
+    </div>
+    <div class="search-group">
+      <%= f.label :lyrics_cont, "歌詞" %>
+      <%= f.search_field :lyrics_cont %>
+    </div>
+    <div class="search-group">
+      <%= f.label :stadium_id_eq, "球場" %>
+      <%= f.collection_select :stadium_id_eq, Stadium.all, :id, :name %>
+    </div>
+    <%= f.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
+
+
+  <!-- 右側：動画の一覧表示 -->
+<div class="grid-3">
+  <% @movies.each do |movie| %>
+    <div class="movie-wrapper">
+      <%= link_to movie_path(movie) do %>
+        <div class="post-container">
+          <!-- 左側：動画情報 & 歌詞 -->
+          <div class="post-left">
+            <%= video_tag movie.movie_url, controls: true, class: 'video-thumbnail' %>
+            <p class="lyrics"><%= movie.lyrics %></p>
+          </div>
+          
+          <!-- 右側：情報表示部分 -->
+          <div class="post-right">
+            <p class="team"><%= movie.team.name %></p>
+            <p class="player"><%= movie.player %></p>
+            <p class="stadium"><%= movie.stadium.name %></p>
+            <p class="day"><%= movie.day %></p>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+</div>
+
+<%= render "shared/footer" %>
