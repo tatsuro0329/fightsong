@@ -26,24 +26,28 @@ class Movie < ApplicationRecord
   end
 
   def self.search(params)
-    binding.pry
     movies = Movie.all
-    
-    # team_id が 1 でない場合だけ、team_id での検索を行う
-    if params[:team_id].present? && params[:team_id].to_i != 1
-      movies = movies.where("team_id = ?", params[:team_id])
-    end
-  
-    # stadium_id が 1 でない場合だけ、stadium_id での検索を行う
-    if params[:stadium_id].present? && params[:stadium_id].to_i != 1
-      movies = movies.where("stadium_id = ?", params[:stadium_id])
-    end
-    
-    # その他の条件
-    movies = movies.where("player LIKE ?", "%#{params[:player]}%") if params[:player].present?
-    movies = movies.where("lyrics LIKE ?", "%#{params[:lyrics]}%") if params[:lyrics].present?
-    
+    movies = movies.where_team(params[:team_id]) if params[:team_id].present?
+    movies = movies.where_stadium(params[:stadium_id]) if params[:stadium_id].present?
+    movies = movies.where_like(:player, params[:player]) if params[:player].present?
+    movies = movies.where_like(:lyrics, params[:lyrics]) if params[:lyrics].present?
     movies
+  end
+
+  def self.where_team(team_id)
+    where_condition(team_id, :team_id)
+  end
+
+  def self.where_stadium(stadium_id)
+    where_condition(stadium_id, :stadium_id)
+  end
+
+  def self.where_like(attribute, value)
+    where("#{attribute} LIKE ?", "%#{value}%")
+  end
+
+  def self.where_condition(value, column)
+    where(column => value.to_i != 1 ? value : nil)
   end
   
 end

@@ -71,17 +71,20 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <div class="comment-section_show">
-    <h3>コメントを投稿する</h3>
+<div class="comment-section_show">
+  <h3>コメントを投稿する</h3>
 
-    <%= form_with(model: [ @movie, @comment ], local: true, class: 'comment-form_show') do |form| %>
-      <div class="form-group_show">
-        <%= form.label :content, "コメント" %>
-        <%= form.text_area :text, class: 'form-control_show', placeholder: "コメントを入力してください..." %>
-      </div>
+  <%= form_with(model: [ @movie, @comment ], local: true, class: 'comment-form_show') do |form| %>
+    <div class="form-group_show">
+      <%= form.label :content, "コメント" %>
+      <%= form.text_area :text, class: 'form-control_show', placeholder: "コメントを入力してください..." %>
+    </div>
       
-      <%= form.submit "コメントを投稿", class: "btn_show_comment btn-primary_show" %>
-    <% end %>
+    <%= form.submit "コメントを投稿", class: "btn_show_comment btn-primary_show center-button" %>
+  <% end %>
+</div>
+
+
 
     <% @comments.each do |comment| %>
       <div class="comment_show">

@@ -153,12 +153,18 @@
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
+  display: flex; /* 親要素をフレックスコンテナに設定 */
+  flex-direction: column; /* 縦向きに要素を配置 */
+  align-items: center;
 }
 
 .comment-form_show {
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f7f7f7;
+  width: 100%; /* 幅を最大幅にする */
+  max-width: 400px; /* 最大幅を指定 */
+  margin: 0 auto;
 }
 
 .comment-form_show h3 {
@@ -188,6 +194,13 @@
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.center-button {
+  display: block; /* ボタンをブロック要素に変更 */
+  margin: 0 auto; /* 左右の余白を自動で中央にする */
 }
 
 .comment_show {

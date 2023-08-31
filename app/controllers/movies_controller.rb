@@ -44,7 +44,11 @@ class MoviesController < ApplicationController
   def search
     @q = Movie.ransack(search_params)
     @movies = @q.result
+  
+    @movies = @movies.where.not(team_id: 1) if params.dig(:q, :team_id_eq)&.to_i == 1
+    @movies = @movies.where.not(stadium_id: 1) if params.dig(:q, :stadium_id_eq)&.to_i == 1
   end
+  
 
   private
 
