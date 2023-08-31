@@ -15,7 +15,7 @@ h2 {
 }
 
 /* フォーム全体のスタイル */
-form {
+.user-registration-form {
   width: 90%;
   max-width: 500px;
   margin: 0 auto;

@@ -1,0 +1,22 @@
+<header class="header-container">
+  <%= link_to root_path, class: 'logo-container' do %>
+    <%= image_tag 'logo.png', alt: 'App Logo', class: 'app-logo' %>
+  <% end %>
+
+  <div class="user-info">
+    <ul>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to new_movie_path, class: "upload-btn" do %>
+            投稿
+          <% end %>
+        </li>
+        <li><%= link_to current_user.name, user_path(current_user), class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "logout-btn" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login-btn" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "signup-btn" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>

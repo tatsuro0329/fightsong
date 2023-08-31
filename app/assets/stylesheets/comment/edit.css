@@ -1,0 +1,29 @@
+/* コメント編集フォームのスタイル */
+.comment-edit-form {
+  margin-bottom: 20px;
+}
+
+/* コメントテキストエリアのスタイル */
+.comment-edit-textarea {
+  width: 95%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 更新ボタンのスタイル */
+.comment-edit-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* ボタンホバー時のスタイル */
+.comment-edit-button:hover {
+  opacity: 0.8;
+}

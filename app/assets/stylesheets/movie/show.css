@@ -1,0 +1,241 @@
+/* Add any necessary reset or global styles here */
+
+.container_show {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ★1つ目の要素★ */
+.first-element_show {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; 
+}
+
+/* 動画表示部分 */
+.movie-video_show {
+  flex: 2; 
+  margin-right: 20px;
+}
+
+.video-thumbnail_show {
+  width: 100%; 
+  max-height: 400px;
+}
+
+/* 動画情報表示部分 */
+.movie-info_show {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-section_show {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-label_show {
+  font-weight: bold;
+  margin-right: 5px;
+  min-width: 60px;
+}
+
+.info-data_show {
+  color: #333;
+  margin: 0;
+}
+
+/* ★2つ目の要素★ */
+.second-element_show {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-section_show {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.text-label_show {
+  font-weight: bold;
+  margin-right: 5px;
+  min-width: 60px;
+}
+
+.text-data_show {
+  color: #333;
+  margin: 0;
+}
+
+.post-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+.add-favorite-link {
+  display: inline-block;
+  position: relative;
+}
+
+.add-favorite-link .favorite-star {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.add-favorite-link::before {
+  content: "お気に入りに追加";
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* お気に入り済みの場合のスタイル */
+.add-favorite-link.favorite-added .favorite-star {
+  color: gold; /* 例えば、お気に入り済みの場合は金色にする */
+}
+
+.add-favorite-link.favorite-added::before {
+  content: "お気に入り済み"; /* テキストを変更しても良いかもしれません */
+}
+
+/* ★3つ目の要素★ */
+.third-element_show {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-buttons_show {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 40px 0;
+}
+
+.btn_show {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  width: auto; 
+}
+
+.btn-primary_show {
+  background-color: #1a3861;
+
+}
+
+.btn-danger_show {
+  background-color: #c43d3d;
+}
+
+.btn_show:hover {
+  transform: scale(1.05);
+}
+
+.comment-section_show {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.comment-form_show {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.comment-form_show h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form-group_show {
+  margin-bottom: 15px;
+}
+
+.form-group_show label {
+  font-weight: bold;
+}
+
+.form-control_show {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn_show_comment {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comment_show {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.comment_show strong {
+  font-weight: bold;
+}
+
+.comment_show p {
+  margin-bottom: 5px;
+}
+
+.comment_show p:last-child {
+  margin-bottom: 0;
+}
+
+.btn_show_comment_edit {
+  background-color: #1a3861;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* 削除ボタンのスタイル */
+.btn_show_comment_delete {
+  background-color: #c43d3d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container_show {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .first-element_show {
+    flex-direction: column;
+  }
+  .movie-video_show {
+    margin-right: 0;
+  }
+}

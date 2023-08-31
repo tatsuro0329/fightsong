@@ -1,0 +1,78 @@
+/* Global styles */
+a {
+  text-decoration: none;
+}
+
+.container_index {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+/* 左側の検索フォームのスタイル */
+.grid-1 {
+  flex: 10%; /* 例えば、ここで幅を2ユニットに調整してみてください */
+  padding-right: 20px;
+}
+
+.search-group {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.search-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 動画の一覧表示のスタイル */
+.grid-3 {
+  flex: 3; /* This makes the element take up 3 grid units */
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.movie-wrapper {
+  display: inline-block;
+  width: calc(50% - 40px); /* この幅は、左右のマージンを考慮して調整します */
+  margin: 15px 20px; /* 上下のマージンは15px、左右のマージンは20pxに設定 */
+  box-sizing: border-box;
+}
+
+.post-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    flex-direction: column; /* Stack the elements vertically */
+  }
+}

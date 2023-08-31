@@ -11,4 +11,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
+  def liked?(movie)
+    favorites.exists?(movie: movie)
+  end
+
 end

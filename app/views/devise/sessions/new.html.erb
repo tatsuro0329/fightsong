@@ -1,8 +1,8 @@
 <h2>ログインしてみ</h2>
 
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'user-registration-form') do |f| %>
 <%= render 'shared/error_messages', model: f.object %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="login_field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

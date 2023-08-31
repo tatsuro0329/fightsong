@@ -1,4 +1,4 @@
-lass Stadium < ActiveHash::Base
+class Stadium < ActiveHash::Base
  self.data = [
    { id: 1, name: '---' },
    { id: 2, name: 'エスコンフィールド北海道' },
@@ -9,7 +9,7 @@ lass Stadium < ActiveHash::Base
    { id: 7, name: '東京ドーム' },
    { id: 8, name: '横浜スタジアム' },
    { id: 9, name: 'バンテリンドーム' },
-   { id: 10, name: '京セラドーム大阪' }
+   { id: 10, name: '京セラドーム大阪' },
    { id: 11, name: 'ほっともっとフィールド神戸' },
    { id: 12, name: '阪神甲子園球場' },
    { id: 13, name: 'MAZDAzoom-zoomスタジアム広島' },

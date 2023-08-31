@@ -1,0 +1,102 @@
+<%= render "shared/header" %>
+
+<div class="container_show">
+    <div class="content-wrapper_show">
+
+        <!-- ★1つ目の要素★ -->
+        <div class="first-element_show">
+            <!-- 動画表示部分 -->
+            <div class="movie-video_show">
+                <%= video_tag @movie.movie_url, controls: true, class: 'video-thumbnail_show' %>
+            </div>
+
+            <!-- 動画情報表示部分 -->
+            <div class="movie-info_show">
+                <div class="info-section_show">
+                    <p class="info-label_show">チーム:</p>
+                    <p class="info-data_show"><%= @movie.team.name %></p>
+                </div>
+                <div class="info-section_show">
+                    <p class="info-label_show">選手:</p>
+                    <p class="info-data_show"><%= @movie.player %></p>
+                </div>
+                <div class="info-section_show">
+                    <p class="info-label_show">球場:</p>
+                    <p class="info-data_show"><%= @movie.stadium.name %></p>
+                </div>
+                <div class="info-section_show">
+                    <p class="info-label_show">投稿日:</p>
+                    <p class="info-data_show"><%= @movie.day.strftime('%Y-%m-%d') %></p>
+                </div>
+                <div class="info-section_show">
+                    <p class="info-label_show">投稿者:</p>
+                    <p class="info-data_show"><%= @movie.user.name %></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ★2つ目の要素★ -->
+        <div class="second-element_show movie-text_show">
+            <div class="text-section_show">
+                <p class="text-label_show">歌詞:</p>
+                <p class="text-data_show"><%= @movie.lyrics %></p>
+            </div>
+            <div class="text-section_show">
+                <p class="text-label_show">その他:</p>
+                <p class="text-data_show"><%= @movie.text %></p>
+            </div>
+            <div class="post-footer">
+                <% if current_user.liked?(@movie) %>
+                  <%= link_to movie_favorites_path(@movie), data: { turbo_method: :delete }, class: "add-favorite-link favorite-added" do %>
+                    <span class="favorite-star">★</span>
+                  <% end %>
+                <% else %>
+                  <%= link_to movie_favorites_path(@movie), data: { turbo_method: :post }, class: "add-favorite-link" do %>
+                    <span class="favorite-star">★</span>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ★3つ目の要素★ -->
+<% if user_signed_in? && current_user == @movie.user %>
+  <div class="third-element_show action-buttons_show">
+      <%= link_to "編集", edit_movie_path(@movie), class: "btn_show btn-primary_show" %>
+      <%= link_to "削除", movie_path(@movie), data: { turbo_method: :delete }, class: "btn_show btn-danger_show" %>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <div class="comment-section_show">
+    <h3>コメントを投稿する</h3>
+
+    <%= form_with(model: [ @movie, @comment ], local: true, class: 'comment-form_show') do |form| %>
+      <div class="form-group_show">
+        <%= form.label :content, "コメント" %>
+        <%= form.text_area :text, class: 'form-control_show', placeholder: "コメントを入力してください..." %>
+      </div>
+      
+      <%= form.submit "コメントを投稿", class: "btn_show_comment btn-primary_show" %>
+    <% end %>
+
+    <% @comments.each do |comment| %>
+      <div class="comment_show">
+        <p><strong><%= comment.user.name %></strong></p>
+        <p><%= comment.text %></p>
+        <p><%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+
+        <% if user_signed_in? && current_user == comment.user %>
+          <%= link_to "編集", edit_movie_comment_path(@movie, comment), class: "btn_show_comment_edit btn-primary_show" %>
+          <%= link_to "削除", movie_comment_path(@movie, comment), data: { turbo_method: :delete }, class: "btn_show_comment_delete btn-danger_show", remote: true %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<%= render "shared/footer" %>
