@@ -1,4 +1,7 @@
 class Team < ActiveHash::Base
+
+  scope :exclude_initial_value, -> { where.not(id: 1) }
+  
  self.data = [
    { id: 1, name: '---' },
    { id: 2, name: '北海道日本ハムファイターズ' },
