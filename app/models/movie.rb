@@ -52,6 +52,8 @@ class Movie < ApplicationRecord
 
   def embedded_video_code
     # 埋め込みコードを保存しているフィールド（embedded_video_code）を返す
+    # 投稿時にembedded_video_code用のtext_fieldを作成し、入力完了で埋め込める
+    # Appとして不便なので今回は動画を再生させることは諦める
     self[:embedded_video_code]
   end
   
