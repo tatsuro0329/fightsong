@@ -49,5 +49,10 @@ class Movie < ApplicationRecord
   def self.where_condition(value, column)
     where(column => value.to_i != 1 ? value : nil)
   end
+
+  def embedded_video_code
+    # 埋め込みコードを保存しているフィールド（embedded_video_code）を返す
+    self[:embedded_video_code]
+  end
   
 end

@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_26_094431) do
     t.string "lyrics", null: false
     t.integer "stadium_id", null: false
     t.text "text"
+    t.text "embedded_video_code"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

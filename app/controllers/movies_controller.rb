@@ -57,7 +57,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:movie_url, :team_id, :player, :day, :lyrics, :stadium_id, :text).merge(user_id: current_user.id)
+    params.require(:movie).permit(:movie_url, :team_id, :player, :day, :lyrics, :stadium_id, :text, :embedded_video_code).merge(user_id: current_user.id)
   end
 
   def search_params

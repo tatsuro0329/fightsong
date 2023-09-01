@@ -8,6 +8,7 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string     :lyrics     , null: false
       t.integer    :stadium_id , null: false
       t.text       :text
+      t.text       :embedded_video_code
       t.references :user       , foreign_key: true, null: false
       t.timestamps
     end
