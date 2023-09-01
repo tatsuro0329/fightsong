@@ -33,11 +33,10 @@
       <%= link_to movie_path(movie) do %>
         <div class="post-container">
           <!-- 左側：動画情報 & 歌詞 -->
+          <%= raw movie.embedded_video_code %>
           <div class="post-left">
-            <%= video_tag movie.movie_url, controls: true, class: 'video-thumbnail' %>
             <p class="lyrics"><%= movie.lyrics %></p>
           </div>
-          
           <!-- 右側：情報表示部分 -->
           <div class="post-right">
             <p class="team"><%= movie.team.name %></p>

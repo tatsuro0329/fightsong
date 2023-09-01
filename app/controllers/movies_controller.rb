@@ -63,4 +63,6 @@ class MoviesController < ApplicationController
   def search_params
     params.require(:q).permit(:team_id_eq, :player_cont, :lyrics_cont, :stadium_id_eq)
   end
+
+
 end
