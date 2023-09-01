@@ -79,3 +79,7 @@ gem 'image_processing', '~> 1.2'
 gem 'active_hash', '>= 3.2.0'
 gem 'rails-i18n', '~> 7.0.0'
 gem 'ransack'
+
+group :production do
+  gem 'unicorn', '6.1.0'
+end
