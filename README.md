@@ -88,6 +88,11 @@ URLを読み込む必要が出ました。
 というコードで読み込もうとしましたが表示ができませんでした。  
 メインコンテンツが表示されていないので現状最も改善すべき点だと考えます。  
 
+### ER図
+
+  [![Image from Gyazo](https://i.gyazo.com/2eca3c2e035cef64e3f2d9d0c14ebf03.png)](https://gyazo.com/2eca3c2e035cef64e3f2d9d0c14ebf03)
+
+
 # テーブル設計
 
 ## users テーブル
